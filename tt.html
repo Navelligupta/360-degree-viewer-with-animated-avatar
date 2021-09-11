@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Imporant meta information to make the page as rigid as possible on mobiles, to avoid unintentional zooming on the page itself  -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sports Area</title>
+    <link rel="stylesheet" type="text/css" href="base.css">
+    
+    <script>
+        document.documentElement.className = "js";
+        var supportsCssVars = function() {
+            var e, t = document.createElement("style");
+            return t.innerHTML = "root:{ --tmp-var; bold; }", document.head.appendChild(t), e = !!(windows.CSS && windows.CSS.supports && windows.CSS.supports("font-weight", " var(--tmp--var)")), t.parentNode.removeChild(t), e
+        };
+        supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+    </script>
+</head>
+<body>
+
+  <!-- The loading element overlays all else until the model is loaded, at which point we remove this element from the DOM -->  
+<div class="loading" id="js-loader">
+    <div class="loader"></div>
+</div>
+ 
+ <div class="wrapper">
+    <canvas id="c"></canvas>
+    <!-- The canvas element is used to draw the 3D scene -->
+
+</div>
+ <iframe height="100%" width="100%" allowfullscreen="true" src="https://momento360.com/e/u/c932eef5bdf7424c99b5d0229ff8d899?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium"></iframe>
+ <div class="container"></div>
+<span class="action"></span>
+<!-- <a style="text-decoration: none;" href="https://www.w3schools.com/"> -->
+<!-- </button> -->
+
+<!-- </a> -->
+
+<div class="button-row">
+    <a href="./basketball.html" text-decoration: none>
+    <button type="button" class="button" style="margin:3px;">
+        <span class="button__text">Basketball ground</span>
+        <span class="button__icon">
+            <ion-icon name="basketball"></ion-icon>
+        </span>
+    </button></a>
+ 
+    <a href="./tt.html" text-decoration:none>
+    <button type="button" class="button" style="margin:3px;" >
+        <span class="button__text">Tennis and Cage Cricket</span>
+        <span class="button__icon">
+            
+        </span>
+    </button></a>
+   
+<a href="../home/index (1).html" text-decoration:none>
+    <button type="button" class="button" style="margin:3px;">
+        <span class="button__text">Home</span>
+        <span class="button__icon">
+            <ion-icon name="home"></ion-icon> 
+        </span>   
+    </button></a>
+    <button type="button" class="button" style="margin:3px;" onclick="myFunction()">
+        <span class="button__text">Questions</span>
+        <span class="button__icon">
+            <ion-icon name="help-outline"></ion-icon>
+        </span>
+    </button>
+</div>
+
+<div class="tabs" id='myDIV'>
+    <div class="tab "  id='q1' onclick="say1()"><div class="label">1) What are the sports facilities available in the university?</div></div>
+    <div class="tab "  id='q2' onclick="say2()"><div class="label">2) Are Gym facilities available? </div></div>
+    
+</div>
+
+<script type="text/javascript">
+ 
+ function say1(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/2169fcd14fd839288ddd7460ca4b55cc/raw/848a005b3adf7eb94435271fc1a62143258b7229/sports%2520area%2520q1.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+    function say2(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/980f8460a040dd4968a836b5f526cc12/raw/38e11a8ead21b62d93b77ade200c84fa84ce3283/sports%2520area%2520q2.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+         window.onload = function() {
+            document.getElementById("myDIV").style.display = 'none';
+        };
+
+
+  function myFunction() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+            }
+
+           
+</script>
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script no module src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!-- The main Three.js file -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js'></script>
+
+<!-- This brings in the ability to load custom 3D objects in the .gltf file format. Blender allows the ability to export to this format out the box -->
+<script src='https://cdn.jsdelivr.net/gh/mrdoob/Three.js@r92/examples/js/loaders/GLTFLoader.js'></script>
+<script src="./js/tt.js"></script>
+
+</body>
+</html>

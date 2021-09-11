@@ -1,0 +1,231 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+* {
+  touch-action: manipulation;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100vh;
+  /*overflow: hidden;*/
+
+  /* Removed unnecessary bg below*/
+}
+.frame {
+  top: 0;
+  position: absolute;
+  left: 0;
+  padding: 2rem;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: wrap;
+  border-bottom-color: red;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#c {
+  /* Discarded values */
+
+  /* position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block; */
+
+  /* 
+  New Values.
+  The following values will make sure that the sizing of the avat is somewhat maintained,
+  have to test out for responsiveness.
+  What awas changes: The overall canva's area was reduced to bare minimum, now the overlap issues
+  which was causing issue with background 3d vierww is resolved. Howver if someone clicks on 
+  the canvas area, the avatar onclick event will trigger, but that are has been reduced a lot.
+  It can further be optimized to dynamic overall area, where only the avatar is the area.
+  But the changes made will owrk for majority cases.  
+  
+  */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20vw;
+  height: 70vh;
+  display: block;
+  /* Top and left 50% will make the top left tip of canvas start from exact center of scren.
+  so the rest of the element will start rendering to the right and to the bottom. therefore we are pulling
+  back the top left corner using margin. margin from top is Half of actual height(70/2) and same with width */
+  margin: -35vh 0 0 -10vw;
+}
+
+.loading {
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  -webkit-perspective: 120px;
+  -moz-perspective: 120px;
+  -ms-perspective: 120px;
+  perspective: 120px;
+  width: 100px;
+  height: 100px;
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  animation: flip 1s infinite;
+}
+.button {
+  display: inline-flex;
+  height: 40px;
+  padding: 0;
+  position: relative;
+  top: 0%;
+  left: 0%;
+  background: #aa0000;
+  border-style: solid;
+  border:none;
+  text-decoration: none;
+ 
+  outline: none;
+  overflow: hidden;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-width: thick;
+  justify-content: space-evenly;
+}
+.button:hover {
+  background: #febe10;
+}
+.button:active {
+  background: #febe10;
+}
+.button__text,
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 17px;
+  color: #fff;
+  height: 100%;
+}
+.button__icon {
+  font-size: 1.5em;
+  background: rgba(0, 0, 0, 0.08);
+}
+.button__text:hover,
+.button__icon:hover {
+  color: black;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotateY(180deg);
+  }
+
+  100% {
+    transform: rotateY(180deg) rotateX(180deg);
+  }
+}
+
+.button-row {
+  width: 100%;
+  border: px solid #aa0000;
+  height: auto;
+  position: absolute;
+  top: 0%;
+  justify-content: space-evenly;
+}
+a{
+  text-decoration: none;}
+  
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    position:absolute;
+    top:4%;
+    left:0.5%;
+  }
+  
+  .tab {
+      height: 40px;
+      width: 550px;
+      border-bottom: 30px solid #aa0000;
+      border-right: 20px solid transparent;
+      border-top-left-radius: 5px;
+      box-sizing: border-box;
+      display: block;
+      position: relative;
+      cursor: pointer;
+      margin-top: 4px;
+      
+  }
+  
+ /* .tab:not(:first-child) {
+      margin-left: -10px;
+      z-index: 0;
+      margin-top: 10px;
+
+  }*/
+  
+  .tab .label{
+    padding: 15px;
+    text-align: center;
+    color: #f8f5f5;
+  }
+  
+  .active {
+    border-bottom: 50px solid #febe10;
+    z-index: 10;
+  }
+  .active .label{
+    color: #161515;
+  }
+  .tab:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2); 
+    border-bottom: 30px solid #febe10;
+    
+    z-index: 10;
+
+  }
+  .label:hover{
+    color: #161515;
+  }

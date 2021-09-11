@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <!-- Imporant meta information to make the page as rigid as possible on mobiles, to avoid unintentional zooming on the page itself  -->
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clubs</title>
+    <link rel="stylesheet" type="text/css" href="base.css">
+    
+    <script>
+        document.documentElement.className = "js";
+        var supportsCssVars = function() {
+            var e, t = document.createElement("style");
+            return t.innerHTML = "root:{ --tmp-var; bold; }", document.head.appendChild(t), e = !!(windows.CSS && windows.CSS.supports && windows.CSS.supports("font-weight", " var(--tmp--var)")), t.parentNode.removeChild(t), e
+        };
+        supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+    </script>
+</head>
+<body>
+
+  <!-- The loading element overlays all else until the model is loaded, at which point we remove this element from the DOM -->  
+<div class="loading" id="js-loader">
+    <div class="loader"></div>
+</div>
+ 
+ <div class="wrapper">
+    <canvas id="c"></canvas>
+    <!-- The canvas element is used to draw the 3D scene -->
+
+</div>
+ <iframe height="100%" width="100%" allowfullscreen="true" src="https://momento360.com/e/u/2b473961168b4f35a99d46d828ac02cf?utm_campaign=embed&utm_source=other&heading=0&pitch=0&field-of-view=75&size=medium"></iframe>
+ <div class="container"></div>
+<span class="action"></span>
+<!-- <a style="text-decoration: none;" href="https://www.w3schools.com/"> -->
+<!-- </button> -->
+
+<!-- </a> -->
+
+<div class="button-row">
+    
+    
+<a href="../home/index (1).html" text-decoration:none>
+<button type="button" class="button" style="margin:3px;">
+    <span class="button__text">Home</span>
+    <span class="button__icon">
+    <ion-icon name="home"></ion-icon>
+</span>
+</button></a>
+
+    <button type="button" class="button" style="margin:3px;" onclick="myFunction()">
+        <span class="button__text">Click to see various clubs</span>
+        <span class="button__icon">
+            
+        </span>
+    </button>
+</div>
+
+<div class="tabs" id='myDIV'>
+    <div class="tab "  id='q1' onclick="say1()"><div class="label">1.	Mozilla Club</div></div>
+    <div class="tab "  id='q2' onclick="say2()"><div class="label">2.	NU Saahas</div></div>
+    <div class="tab "  id='q3' onclick="say3()"><div class="label">3.	Rangmanch NU</div></div>
+    <div class="tab "  id='q4' onclick="say4()"><div class="label">4.	Music club</div></div>
+    <div class="tab "  id='q5' onclick="say5()"><div class="label">5.	Impetus</div></div>
+    <div class="tab "  id='q6' onclick="say6()"><div class="label">6.	Instils</div></div>
+    <div class="tab "  id='q7' onclick="say7()"><div class="label">7.	Vividha</div></div>
+    <div class="tab "  id='q8' onclick="say8()"><div class="label">8.	Ayurveda Club</div></div>
+    <div class="tab "  id='q9' onclick="say9()"><div class="label">9.	Robotics Club</div></div>
+    <div class="tab "  id='q10' onclick="say10()"><div class="label">10.	Debating Club</div></div>
+    <div class="tab "  id='q411' onclick="say11()"><div class="label">11.	Jigyasu Club</div></div>
+</div>
+
+<script type="text/javascript">
+    //id1
+   
+
+    function say1(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/d0235b272e2cb88e6749c486f971da7b/raw/54678b93bc45a7126410f3633b136862e357f3fd/mozilla%2520club.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+
+    function say2(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/9177c6bad85539ce359e7a66a43e3a85/raw/f65b6329b81119cc9180f37df88d58004382bca0/NU%2520Sahas.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+    function say3(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/c4c5b895ccabc1702e9bd085b75748b4/raw/621107259d9a90e74f3f8f68a35b30ded70a933e/rangmanch%2520NU.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+    function say4(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/f5f7cfc4f3d6256bca546bb3918d49ac/raw/910a30e4bc850062caea720255265529eb1c9ed2/Music%2520Club.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+    function say5(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/b7d50cb6c0cbfd41660a7c902e9d42c7/raw/4a4f0883790e2f1cb07417b7f7b67d69d76fba31/impetus.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+    function say6(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/38a23cb7ebc106ff5ba6772e122f1f17/raw/0addc0606d5135a99d2028b9f3550f7e1967eb22/Instils.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+    function say7(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/586a84d0d445b60dbee8746c354e1550/raw/f7c18d5fb0709f1dd6b7b4d6a0c0c73e1184872a/Vividha.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+    function say8(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/718242629e0607c933a1f86eb5eddd76/raw/361be00d9b4cda464a4726cbc8641c1a25010e31/Ayurveda%2520Club.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+
+    function say9(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/31a0f1114aa27b6acc379ca7d1f62852/raw/146c18507aeb0940ce4d52656e55a10cd0c9afd8/Robotics%2520Club.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+    function say10(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/4f065ca72c286e17cdb375d728f2d39d/raw/c246e42febfb1948ad59884290074a56b26191c8/Debating%2520Society.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+    function say11(){
+       const fileURL = "https://gist.githubusercontent.com/MousumiSaha666/a47831996eeb1f6d9c77e55a70626543/raw/141e46c4b28706be926ce3212841b1bc96e57a57/Jigyasu%2520Club.txt"
+        
+    //    var readAloud = ""
+       fetch(fileURL).then(file => file.text()).then(text => {
+        var msg = new SpeechSynthesisUtterance();
+        var voices = window.speechSynthesis.getVoices();
+        msg.voice = voices[1]; 
+        msg.volume = 1; // From 0 to 1
+        msg.rate = 0.9; // From 0.1 to 10
+        msg.pitch = 1; // From 0 to 2
+        msg.text =  text;
+        msg.lang = 'en';
+        speechSynthesis.speak(msg)
+
+
+
+       });
+
+        // var fr = new FileReader();
+        // var res = fr.readAsText(fileURL)
+        // console.log(res)
+       
+        
+    }
+
+
+    window.onload = function() {
+        document.getElementById("myDIV").style.display = 'none';
+    };
+
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+        }
+</script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script no module src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!-- The main Three.js file -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js'></script>
+
+<!-- This brings in the ability to load custom 3D objects in the .gltf file format. Blender allows the ability to export to this format out the box -->
+<script src='https://cdn.jsdelivr.net/gh/mrdoob/Three.js@r92/examples/js/loaders/GLTFLoader.js'></script>
+<script src="./script.js"></script>
+
+</body>
+</html>
